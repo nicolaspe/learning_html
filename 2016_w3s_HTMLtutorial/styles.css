@@ -25,3 +25,22 @@ p.alert {
 img {
   width:100%;
 }
+table {
+  border-spacing: 5px;
+}
+table, th, td {
+  color: white;
+  border: 1px solid pink;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+th {
+  font-weight: bold;
+  text-align: center;
+}
+table#t01 {
+  width: 100%;
+  background-color: black;
+}
