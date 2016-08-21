@@ -7,18 +7,26 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body {background-color: rgb(238,255,255)}
+    body {background-color: rgb(240,255,240)}
     h1  {text-align: center}
     a:link    {color:green; background-color: transparent}
     a:visited {color:darkgreen}
     a:hover   {color:darkblue; text-decoration: underline}
     a:active  {color:yellow; text-decoration: overline}
+    div.stuff {
+      background-color: black;
+      color: rgb(240,255,240);
+      padding: 20px;
+    }
+    span.highlight {
+      color: darkgreen;
+    }
   </style>
 </head>
 
 <body>
   <h1>
-    Coding in <span style="color:darkgreen">HMTL</span>
+    Coding in <span class="highlight">HMTL</span>
   </h1>
   Keyboard inputs: <kbd>cmd + a</kbd><br>
   Code: <code>var x = 0;</code><br>
@@ -32,7 +40,7 @@
   </a> GitHub repository with my HTML learning process</p>
   <hr>
 
-  <div style="background-color:black; color:rgb(240,240,255); padding:20px">
+  <div class="stuff">
   <h2>Things I do</h2>
   <ul style="list-style-type:circle">
     <li>coding</li>
