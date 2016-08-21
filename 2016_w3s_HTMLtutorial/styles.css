@@ -1,0 +1,27 @@
+body {
+  background-color: rgb(10, 10, 0);
+}
+h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: sans-serif;
+}
+p {
+  color: rgb(255, 240, 240);
+  font-size: 90%;
+  font-family: courier;
+  border: 1px solid white;
+  padding: 30px;
+  margin: 50px;
+}
+#p01 {
+  color: rgb(255, 200, 200);
+}
+p.alert {
+  color: red;
+  font-size: 150%;
+  border: 0px;
+}
+img {
+  width:100%;
+}
