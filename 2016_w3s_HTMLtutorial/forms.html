@@ -15,6 +15,7 @@
       background-color: rgb(240, 240, 240);
       background-repeat: no-repeat;
       background-attachment: fixed;
+      margin: 5px;
     }
     header {
       padding: 1em;
@@ -56,15 +57,20 @@
     <!-- I WOULD USE THIS IF I KNEW HOW TO HANDLE FORMS!!
     <form action="action_page.php" method="post" accept-charset="UTF-8"
     autocomplete="off"> -->
-    <form>
+    <form method="post">
       <fieldset>
         <legend>Personal Information</legend>
         First name: &nbsp;
         <input type="text" name="firstname"> <br>
-        <br>
         <input type="radio" name="gender" value="male">Male<br>
         <input type="radio" name="gender" value="female">Female<br>
         <input type="radio" name="gender" value="other">Other<br>
+        Birthday: <input type="date" name="bday" min="1979-01-01" max="1998-12-31"><br>
+        Favorite color: <input type="color" name="favcolor"><br>
+        <!-- Time is NOT supported on FIREFOX -->
+        Time: <input type="time" name="usertime" /><br />
+        Email: <input type="email" name="useremail" /><br />
+        Website: <input type="url" name="userpage" /><br />
       </fieldset>
       <br>
       <fieldset>
@@ -90,8 +96,10 @@
           <option value="Eastwood">
         </datalist><br>
         <br>
-        Gear: <textarea name="gigsetup" rows="8" cols="20">
-Enter your gear setup information</textarea>
+        Gear: <textarea name="gigsetup" rows="8" cols="20" maxlength="1000">
+Enter your gear setup information (max 1000 characters)</textarea>
+      <br>
+      <input type="checkbox" name="shred" value="shred_god">I can SHRED!<br>
       </fieldset>
       <br /> <input type="submit" value="Submit"><br>
     </form>
@@ -101,6 +109,7 @@ Enter your gear setup information</textarea>
       <fieldset>
         <legend>User login</legend>
         Username: <input type="text" name="user"> <br>
+        Password: <input type="password" name="pass"><br>
         Encryption: <keygen name="security" /> <br>
         Magic combination: <input type="range" id="a" name="a" value="8"
         min="0" max="20" step="2" class="slid"> + <input type="number" id="b" name="b"
