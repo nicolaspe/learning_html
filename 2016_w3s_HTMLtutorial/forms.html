@@ -35,12 +35,23 @@
     }
     form {
       font-size: 90%;
+      padding: 5px;
+    }
+    textarea {
+      vertical-align: top;
+    }
+    legend {
+      font-weight: bold;
+      color: darkblue;
+    }
+    .slid {
+      width: 60px;
     }
     </style>
   </head>
   <body>
     <header>
-      <h1>Information Input Forms</h1>
+      <h1>Input Forms</h1>
     </header>
     <!-- I WOULD USE THIS IF I KNEW HOW TO HANDLE FORMS!!
     <form action="action_page.php" method="post" accept-charset="UTF-8"
@@ -54,10 +65,51 @@
         <input type="radio" name="gender" value="male">Male<br>
         <input type="radio" name="gender" value="female">Female<br>
         <input type="radio" name="gender" value="other">Other<br>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Other stuff</legend>
+        Instrument: <select name="Instrument">
+          <option value="Guitar" selected="selected">Guitar</option>
+          <option value="Bass">Bass</option>
+          <option value="Other">Other</option>
+        </select><br>
         <br>
-        <input type="submit" value="Submit"><br>
+        Brand: <input list="Brand">
+        <datalist id="Brand">
+          <option value="Fender">
+          <option value="Squier">
+          <option value="Gibson">
+          <option value="Epiphone">
+          <option value="Godin">
+          <option value="Ibanez">
+          <option value="Danelectro">
+          <option value="Rickenbacker">
+          <option value="Gretsch">
+          <option value="Yamaha">
+          <option value="Eastwood">
+        </datalist><br>
+        <br>
+        Gear: <textarea name="gigsetup" rows="8" cols="20">
+Enter your gear setup information</textarea>
+      </fieldset>
+      <br /> <input type="submit" value="Submit"><br>
+    </form>
+    <br>
+    <form style="font-size:80%"
+    oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+      <fieldset>
+        <legend>User login</legend>
+        Username: <input type="text" name="user"> <br>
+        Encryption: <keygen name="security" /> <br>
+        Magic combination: <input type="range" id="a" name="a" value="8"
+        min="0" max="20" step="2" class="slid"> + <input type="number" id="b" name="b"
+        value="12" min="0" max="15"> = <output name="x" for="a b"></output>
+        <br />
+        <input type="submit" />
       </fieldset>
     </form>
+    <button type="button" onclick="alert('STOP SLACKING!')">Wanna click?</button>
     <hr>
     <a href="index.html">Home</a>
   </body>
