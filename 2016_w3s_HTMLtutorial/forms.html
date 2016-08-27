@@ -56,21 +56,24 @@
     </header>
     <!-- I WOULD USE THIS IF I KNEW HOW TO HANDLE FORMS!!
     <form action="action_page.php" method="post" accept-charset="UTF-8"
-    autocomplete="off"> -->
-    <form method="post">
+    autocomplete="off" formenctype="multipart/form-data"> -->
+    <form method="post" autocomplete="on">
       <fieldset>
         <legend>Personal Information</legend>
         First name: &nbsp;
-        <input type="text" name="firstname"> <br>
+        <input type="text" name="firstname" required> <br>
         <input type="radio" name="gender" value="male">Male<br>
         <input type="radio" name="gender" value="female">Female<br>
         <input type="radio" name="gender" value="other">Other<br>
         Birthday: <input type="date" name="bday" min="1979-01-01" max="1998-12-31"><br>
         Favorite color: <input type="color" name="favcolor"><br>
         <!-- Time is NOT supported on FIREFOX -->
-        Time: <input type="time" name="usertime" /><br />
-        Email: <input type="email" name="useremail" /><br />
-        Website: <input type="url" name="userpage" /><br />
+        Time: <input type="time" name="usertime" required /><br />
+        Email: <input type="email" name="useremail" required /><br />
+        Website: <input type="url" name="userpage" novalidate
+        placeholder="www.example.com" /><br />
+        Country code: <input type="text" name="country" pattern="[A-Za-z]{3}"
+        title="Three letter country code" placeholder="CHI"><br>
       </fieldset>
       <br>
       <fieldset>
@@ -81,7 +84,7 @@
           <option value="Other">Other</option>
         </select><br>
         <br>
-        Brand: <input list="Brand">
+        Brand: <input list="Brand" autofocus>
         <datalist id="Brand">
           <option value="Fender">
           <option value="Squier">
@@ -104,7 +107,7 @@ Enter your gear setup information (max 1000 characters)</textarea>
       <br /> <input type="submit" value="Submit"><br>
     </form>
     <br>
-    <form style="font-size:80%"
+    <form style="font-size:80%" autocomplete="on" novalidate
     oninput="x.value=parseInt(a.value)+parseInt(b.value)">
       <fieldset>
         <legend>User login</legend>
@@ -113,9 +116,13 @@ Enter your gear setup information (max 1000 characters)</textarea>
         Encryption: <keygen name="security" /> <br>
         Magic combination: <input type="range" id="a" name="a" value="8"
         min="0" max="20" step="2" class="slid"> + <input type="number" id="b" name="b"
-        value="12" min="0" max="15"> = <output name="x" for="a b"></output>
+        value="12" min="0" max="15"> = <output name="x" for="a b">
+        </output>
         <br />
+        Add image(s): <input type="file" name="img" multiple>
+        <br /><br />
         <input type="submit" />
+        <input type="submit" value="Submit to new window" formtarget="_blank">
       </fieldset>
     </form>
     <button type="button" onclick="alert('STOP SLACKING!')">Wanna click?</button>
